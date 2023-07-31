@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="getDay()">Check Day</button>
+
+    <script>
+    function getDay() {
+        const userInput = parseInt(prompt("Enter a number from 1 to 7:"));
+
+        let day;
+        switch (userInput) {
+            case 1:
+                day = "Monday";
+                break;
+            case 2:
+                day = "Tuesday";
+                break;
+            case 3:
+                day = "Wednesday";
+                break;
+            case 4:
+                day = "Thursday";
+                break;
+            case 5:
+                day = "Friday";
+                break;
+            case 6:
+                day = "Saturday";
+                break;
+            case 7:
+                day = "Sunday";
+                break;
+            default:
+                day = "Invalid input. Please enter a number from 1 to 7.";
+        }
+
+        alert(day);
+    }
+    </script>
+
+    <button onclick="redirectToGoogle()">Google</button>
+
+    <script>
+    function redirectToGoogle() {
+        const choice = confirm("Do you want to go to Google?");
+
+        if (choice) {
+            window.location.href = "https://www.google.com";
+        } else {
+            alert("You decided to stay.");
+        }
+    }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onmouseover="changeColor('red')" onmouseout="resetColor()">Red</button>
+    <button onmouseover="changeColor('green')" onmouseout="resetColor()">Green</button>
+    <button onmouseover="changeColor('blue')" onmouseout="resetColor()">Blue</button>
+
+    <script>
+    function changeColor(color) {
+        document.body.style.backgroundColor = color;
+    }
+
+    function resetColor() {
+        document.body.style.backgroundColor = 'white';
+    }
+    </script>
+
+    <br><button onclick="calculateArea()">Calculate Circle Area</button>
+
+    <script>
+    function calculateArea() {
+        const radius = parseFloat(prompt("Enter the radius of the circle:"));
+        const area = (22 / 7) * radius * radius;
+        alert("The area of the circle is: " + area.toFixed(2));
+    }
+    </script>
+
+</body>
+</html>

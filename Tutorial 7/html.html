@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial 7</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #marksInput {
+            margin-bottom: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <!--Question 01
+    <button onclick="showPopup()">Button</button>
+
+    <script>
+    function showPopup() {
+        var message = "This is alert";
+        alert(message);
+    }
+    </script>-->
+
+    <h2>Enter 5 Marks:</h2>
+    <input type="number" class="marksInput" placeholder="Enter mark 1">
+    <input type="number" class="marksInput" placeholder="Enter mark 2">
+    <input type="number" class="marksInput" placeholder="Enter mark 3">
+    <input type="number" class="marksInput" placeholder="Enter mark 4">
+    <input type="number" class="marksInput" placeholder="Enter mark 5">
+
+    <button id="grade">Grade</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let marks = [];
+            let sum = 0;
+            let average;
+
+            function getMarks() {
+                let marksInputs = document.querySelectorAll('.marksInput');
+                for (let i = 0; i < marksInputs.length; i++) {
+                    marks.push(parseInt(marksInputs[i].value));
+                }
+            }
+
+            function calculateTotal() {
+                for (let mark of marks) {
+                    sum += mark;
+                }
+            }
+
+            function calculateAverage() {
+                average = sum / marks.length;
+            }
+
+            function displayOutput() {
+                console.log("Sum is: " + sum);
+                console.log("Average is: " + average);
+            }
+
+            function grade() {
+                getMarks();
+                calculateTotal();
+                calculateAverage();
+                displayOutput();
+
+                if (average > 30) {
+                    alert("Congrats! You passed");
+                } else {
+                    alert("Better luck next time");
+                }
+            }
+
+            document.getElementById("grade").addEventListener("click", grade);
+        });
+    </script>
+</body>
+</html>
